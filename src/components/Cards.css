@@ -1,0 +1,4 @@
+#cards {
+  transition: all;
+  transition-duration: 500ms;
+}
