@@ -10,7 +10,6 @@ export default function Navbar(){
         // console.log(na === null);
         if(na === null){
             na = "";
-            localStorage.clear();
         }
         setName(na);
     },[setName])
@@ -21,7 +20,8 @@ export default function Navbar(){
                 {(name != "") ?
                 <nav className='flex gap-4 '>
                     <button className='p-3 rounded-md text-slate-900 bg-slate-400' onClick={()=>{navigate("/add");}}>Add Card</button>                
-                    <button className='p-3 rounded-md text-slate-900 bg-slate-400' onClick={()=>{localStorage.clear(); window.location.reload();}}>Logout</button>  
+                    <button className='p-3 rounded-md text-slate-900 bg-slate-400' onClick={()=>{
+                        localStorage.removeItem("token");localStorage.removeItem("name"); window.location.reload();}}>Logout</button>  
                 </nav>
                 : 
                 <nav className='flex gap-4 '>

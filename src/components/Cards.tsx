@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Cards.css'
 
@@ -29,9 +29,7 @@ export default function Cards() {
         <main>
         <div className="text-2xl">Cards</div>
         <div className="w-full h-full flex gap-10 justify-center mx-auto my-10 flex-wrap">
-            <Suspense fallback={<div>Loading...</div>}>
-                {data.map((a : Card)=>{return <Card question={a.question} answer={a.answer} id={a.id} key={a.id}/>})}
-            </Suspense>
+        {data.map((a : Card)=>{return <Card question={a.question} answer={a.answer} id={a.id} key={a.id}/>})}
         </div>
         </main>
     )
